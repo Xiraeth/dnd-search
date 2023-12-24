@@ -4,7 +4,7 @@ const monsterBaseUrl = "https://www.aidedd.org/dnd/monstres.php?vo=";
 const spellBaseUrl = "https://www.aidedd.org/dnd/sorts.php?vo=";
 
 function App() {
-  const itemsPerPage = 50;
+  const itemsPerPage = 15;
   let totalPages = 1;
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
@@ -28,6 +28,7 @@ function App() {
   };
 
   const filterData = (e) => {
+    setCurrPage(1);
     setSearchTerm(e.target.value);
     const filteredArr = data.filter((item) =>
       item.name.toLowerCase().includes(e.target.value.toLowerCase())
@@ -43,12 +44,22 @@ function App() {
   };
 
   const prevPage = () => {
-    setCurrPage(currPage - 1);
+    if (currPage == 1) setCurrPage(totalPages);
+    else setCurrPage(currPage - 1);
   };
 
   const nextPage = () => {
-    setCurrPage(currPage + 1);
+    if (currPage == totalPages) setCurrPage(1);
+    else setCurrPage(currPage + 1);
   };
+
+  useEffect(() => {
+    // Update filteredData when searchTerm changes
+    const filteredArr = data.filter((item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredData(filteredArr);
+  }, [searchTerm, data]);
 
   useEffect(() => {
     let isMounted = true;
@@ -96,12 +107,18 @@ function App() {
         </button>
       </div>
       <label htmlFor="monsterSearch">Search </label>
-      <input
-        id="monsterSearch"
-        type="text"
-        value={searchTerm}
-        onChange={filterData}
-      />
+      <div className="inputContainer">
+        <input
+          id="monsterSearch"
+          type="text"
+          value={searchTerm}
+          onChange={filterData}
+        />
+        <i
+          className="fa-solid fa-circle-xmark"
+          onClick={() => setSearchTerm("")}
+        ></i>
+      </div>
       <ul>
         {getPageData().map((item) => (
           <li key={item.index}>
@@ -112,7 +129,7 @@ function App() {
         ))}
       </ul>
       <div className="paginationContainer">
-        <button onClick={prevPage} disabled={currPage === 1}>
+        <button onClick={prevPage} /*disabled={currPage === 1}*/>
           Previous
         </button>
         <p>
@@ -120,10 +137,26 @@ function App() {
         </p>
         <button
           onClick={nextPage}
-          disabled={getPageData().length < itemsPerPage}
+          /*disabled={getPageData().length < itemsPerPage}*/
         >
           Next
         </button>
+      </div>
+      <div className="footer">
+        <p>Powered by </p>{" "}
+        <p>
+          <a href="https://www.dnd5eapi.co/" target="_blank">
+            D&D 5e Api{" "}
+          </a>
+        </p>{" "}
+        <p>
+          <a
+            href="https://www.aidedd.org/dnd-filters/monsters.php"
+            target="_blank"
+          >
+            Aidedd.org
+          </a>
+        </p>
       </div>
     </div>
   );
