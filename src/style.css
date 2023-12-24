@@ -1,0 +1,142 @@
+:root {
+  font-size: 16px;
+  --text-color: mediumslateblue;
+  --hover-color: rgba(124, 104, 238, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: 1rem;
+  min-height: 100vh;
+  overflow-y: hidden;
+  background-color: burlywood;
+}
+
+select > option:first-of-type {
+  display: none;
+}
+
+select {
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 1rem;
+}
+
+option {
+  font-size: 0.7em;
+}
+
+.buttonsContainer {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 191px;
+}
+
+.buttonsContainer > button {
+  font-size: 1rem;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  background: lavender;
+  transition: all 0.1s;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+.buttonsContainer .activeBtn {
+  color: rgb(245, 245, 255);
+  background: #444444;
+  box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  transform: translateY(3px);
+}
+
+.buttonsContainer > button:hover {
+  background: rgb(205, 205, 228);
+}
+
+label {
+  font-size: 1.3rem;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+input {
+  margin-bottom: 1rem;
+  padding: 5px 10px;
+  border: 1px solid black;
+  outline: none;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+ul {
+  background-color: lavender;
+  max-width: 500px;
+  list-style-type: none;
+  padding: 5px 10px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  overflow-y: auto;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+li {
+  margin: 8px;
+  width: 150px;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--text-color);
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+a:active {
+  color: var(--hover-color);
+}
+
+.paginationContainer {
+  width: 191px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 5px;
+}
+
+.paginationContainer > buttons {
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    font-size: 18px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    text-align: center;
+  }
+}
