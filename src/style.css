@@ -203,7 +203,6 @@ a:active {
     width: 191px;
     justify-content: space-between;
     gap: 0;
-    padding-top: 30px;
   }
 
   .footer {
@@ -211,7 +210,9 @@ a:active {
     flex-direction: column;
   }
 
-  .footer > p {
-    margin: 2px;
+  .footer p,
+  .footer a,
+  .footer span {
+    margin: 4px;
   }
 }

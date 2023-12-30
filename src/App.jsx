@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 const monsterBaseUrl = "https://www.aidedd.org/dnd/monstres.php?vo=";
-const spellBaseUrl = "https://www.aidedd.org/dnd/sorts.php?vo=";
+const spellBaseUrl = "http://dnd5e.wikidot.com/spell:";
 
 function App() {
   const itemsPerPage = 15;
@@ -143,18 +143,23 @@ function App() {
         </button>
       </div>
       <div className="footer">
-        <p>Powered by </p>{" "}
         <p>
+          <span>Powered by</span>
           <a href="https://www.dnd5eapi.co/" target="_blank">
             D&D 5e Api{" "}
           </a>
+          ,
         </p>{" "}
         <p>
           <a
             href="https://www.aidedd.org/dnd-filters/monsters.php"
             target="_blank"
           >
-            Aidedd.org
+            Aidedd{" "}
+          </a>
+          ,
+          <a href="http://dnd5e.wikidot.com/" target="_blank">
+            Wikidot
           </a>
         </p>
       </div>
