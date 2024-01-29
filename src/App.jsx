@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 const monsterBaseUrl = "https://www.aidedd.org/dnd/monstres.php?vo=";
-const spellBaseUrl = "http://dnd5e.wikidot.com/spell:";
+const spellBaseUrl = "https://www.aidedd.org/dnd/sorts.php?vo=";
 
 function App() {
   const itemsPerPage = 15;
