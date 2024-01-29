@@ -143,25 +143,17 @@ function App() {
         </button>
       </div>
       <div className="footer">
-        <p>
-          <span>Powered by</span>
-          <a href="https://www.dnd5eapi.co/" target="_blank">
-            D&D 5e Api{" "}
-          </a>
-          ,
-        </p>{" "}
-        <p>
-          <a
-            href="https://www.aidedd.org/dnd-filters/monsters.php"
-            target="_blank"
-          >
-            Aidedd{" "}
-          </a>
-          ,
-          <a href="http://dnd5e.wikidot.com/" target="_blank">
-            Wikidot
-          </a>
-        </p>
+        <span>Powered by </span>
+        <a href="https://www.dnd5eapi.co/" target="_blank">
+          D&D 5e Api
+        </a>
+        ,{" "}
+        <a
+          href="https://www.aidedd.org/dnd-filters/monsters.php"
+          target="_blank"
+        >
+          Aidedd
+        </a>
       </div>
     </div>
   );

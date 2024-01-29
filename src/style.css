@@ -172,12 +172,14 @@ a:active {
   bottom: 0px;
   left: 0px;
   right: 0px;
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: center; */
   align-items: center;
   background: rgba(0, 0, 0, 0.3);
   color: white;
+  text-align: center;
+  padding: 10px;
 }
 
 .footer a {
@@ -189,9 +191,9 @@ a:active {
   color: rgb(100, 156, 211);
 }
 
-.footer p {
+/* .footer p {
   margin-right: 5px;
-}
+} */
 
 @media screen and (max-width: 500px) {
   label {
@@ -210,9 +212,9 @@ a:active {
     flex-direction: column;
   }
 
-  .footer p,
+  /* .footer p,
   .footer a,
   .footer span {
     margin: 4px;
-  }
+  } */
 }
